@@ -106,24 +106,29 @@
 
     <div class="container-fluid teams" id="teams">
       <div class="row m-4">
-        <div class="col-md-12">
+        <div class="col-md-5">
           <h1>NBA_TEAMS</h1>
+        
+     
+      
+        <div class="row m-4">
+          <div class="west-conf col-md-6">
+            <h2 style="font-family: 'Kaushan Script', cursive">
+              West conference
+            </h2>
+            <ul class="west-teams my-4"></ul>
+          </div>
+          <div class="east-conf col-md-6">
+            <h2 style="font-family: 'Kaushan Script', cursive">
+              East conference
+            </h2>
+            <ul class="east-teams my-4"></ul>
+          </div>
         </div>
       </div>
-      <div class="row m-4">
-        <div class="west-conf col-md-6">
-          <h2 style="font-family: 'Kaushan Script', cursive">
-            West conference
-          </h2>
-          <ul class="west-teams my-4"></ul>
-        </div>
-        <div class="east-conf col-md-6">
-          <h2 style="font-family: 'Kaushan Script', cursive">
-            East conference
-          </h2>
-          <ul class="east-teams my-4"></ul>
-        </div>
-      </div>
+      <div class="col-md-5">
+          <h1>PLAYERS</h1>
+          </div>
     </div>
     <script src="script.js"></script>
 
@@ -144,3 +149,26 @@
     ></script>
   </body>
 </html>
+
+<style>
+  .team {
+    position: relative;
+    padding: 5px;
+    list-style: none;
+  }
+  li {
+    cursor: pointer;
+  }
+  li:hover {
+    background-color: orange;
+  }
+  .logo {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: -20px;
+    transform: translate(-20px, -50%);
+    background-attachment: cover;
+  }
+</style>

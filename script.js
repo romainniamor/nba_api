@@ -1,15 +1,11 @@
-console.log("test");
-
-const submitBtn = document.querySelector("button");
-
-submitBtn.addEventListener("click", getTeams);
+import { API_KEY } from "./config.js";
 
 async function getTeams() {
   const url = "https://free-nba.p.rapidapi.com/teams?page=1";
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "eece1f6e8dmshb6f99d74cd7bbc0p187ce4jsn1037a6190ce8",
+      "X-RapidAPI-Key": API_KEY,
       "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
     },
   };
@@ -26,29 +22,39 @@ async function getTeams() {
         dropDownItem.classList.add("dropdown-item", "btn-warning");
         dropDownItem.textContent = `${element.city} ${element.name}`;
         dropDownMenu.appendChild(dropDownItem);
-        // separation des équipes par conference
-        //si Est
+        // séparation des équipes par conférence
         if (element.conference === "East") {
-          console.log(element.city, element.name);
           const eastConf = document.querySelector(".east-teams");
           const eastTeam = document.createElement("li");
           eastTeam.classList.add("team");
+          const logoImg = document.createElement("img");
+          logoImg.src = `assets/logo_nba_teams/${element.name}.png`;
+
+          logoImg.classList.add("logo");
+
           eastTeam.textContent = `${element.city} ${element.name}`;
           eastConf.appendChild(eastTeam);
-        }
-        //si west
-        else {
+          eastTeam.appendChild(logoImg);
+        } else {
+          console.log(element.city, element.name);
           const westConf = document.querySelector(".west-teams");
           const westTeam = document.createElement("li");
           westTeam.classList.add("team");
+          const logoImg = document.createElement("img");
+          logoImg.src = `assets/logo_nba_teams/${element.name}.png`;
+
+          logoImg.classList.add("logo");
+
           westTeam.textContent = `${element.city} ${element.name}`;
           westConf.appendChild(westTeam);
+          westTeam.appendChild(logoImg);
         }
       });
     }
   } catch (error) {
     console.error(error);
   }
+  console.log("test");
 }
 
 getTeams();
