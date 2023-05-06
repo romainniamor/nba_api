@@ -44,34 +44,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#teams">Teams</a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Players
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
-          </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            style="box-shadow: 0 0 0 1px rgb(36, 36, 36)"
-            type="search"
-            placeholder="Find a player..."
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
       </div>
     </nav>
 
@@ -85,17 +58,20 @@
         "
         ;
       >
-        <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <div
+          class="col-md-4 d-flex align-items-center justify-content-center p-3"
+        >
           <div>
             <h1 class="text-center mb-3" style="font-size: 6em; color: white">
               NBA_API
             </h1>
-            <button
-              class="btn btn-outline-warning my-2 my-sm-0 btn-lg"
-              type="submit"
+            <div
+              class="my-2 my-sm-0 btn-lg"
+              style="background: orange; text-align: center"
+              ;
             >
               Select Team
-            </button>
+            </div>
           </div>
         </div>
         <div class="col-md-8 d-flex align-items-center justify-content-center">
@@ -106,30 +82,48 @@
 
     <div class="container-fluid teams" id="teams">
       <div class="row m-4">
-        <div class="col-md-4">
-          <h1>NBA_TEAMS</h1>
-        
-     
-      
-        <div class="row m-4">
-          <div class="west-conf col-md-6">
-            <h2 style="font-family: 'Kaushan Script', cursive">
-              West conference
-            </h2>
-            <ul class="west-teams my-4"></ul>
+        <div class="col-md-12">
+          <h1 class="text-left">NBA_TEAMS</h1>
+        </div>
+      </div>
+      <div class="row m-4">
+        <div class="conf col-md-6">
+          <h2 style="font-family: 'Kaushan Script', cursive">
+            West conference
+          </h2>
+          <ul class="west-teams my-4"></ul>
+          <div class="row">
+            <div class="division northwest col-md-12">
+              <h4 style="font-family: 'Kaushan Script', cursive">Northwest</h4>
+            </div>
+            <div class="division pacific col-md-12">
+              <h4 style="font-family: 'Kaushan Script', cursive">Pacific</h4>
+            </div>
+            <div class="division southwest col-md-12">
+              <h4 style="font-family: 'Kaushan Script', cursive">Southwest</h4>
+            </div>
           </div>
-          <div class="east-conf col-md-6">
-            <h2 style="font-family: 'Kaushan Script', cursive">
-              East conference
-            </h2>
-            <ul class="east-teams my-4"></ul>
+        </div>
+        <div class="conf col-md-6">
+          <h2 style="font-family: 'Kaushan Script', cursive">
+            East conference
+          </h2>
+          <ul class="east-teams my-4"></ul>
+          <div class="row">
+            <div class="division atlantic col-md-12">
+              <h4 style="font-family: 'Kaushan Script', cursive">Atlantic</h4>
+            </div>
+            <div class="division central col-md-12">
+              <h4 style="font-family: 'Kaushan Script', cursive">Central</h4>
+            </div>
+            <div class="division southeast col-md-12">
+              <h4 style="font-family: 'Kaushan Script', cursive">Southeast</h4>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-5">
-          <h1>PLAYERS</h1>
-          </div>
     </div>
+
     <script src="script.js"></script>
 
     <script
@@ -153,22 +147,31 @@
 <style>
   .team {
     position: relative;
-    padding: 5px;
+    padding: 5px 0 5px 30px;
     list-style: none;
   }
   li {
     cursor: pointer;
   }
   li:hover {
-    background-color: #fc831f;
+    color: #fc831f;
   }
   .logo {
     position: absolute;
     width: 30px;
     height: 30px;
     top: 50%;
-    left: -20px;
-    transform: translate(-20px, -50%);
+    left: -5px;
+    transform: translate(-5px, -50%);
     background-attachment: cover;
+  }
+
+  h4,
+  h2 {
+    padding: 20px 0;
+  }
+
+  .conf {
+    padding: 20px 0;
   }
 </style>
